@@ -81,7 +81,9 @@
                                 <h6>@product.Name</h6>
                             </div>
                             <div class="price">
-                                <span class="text-black-50">Add to cart</span>
+                                <a asp-controller="basket" asp-action="addbasket" asp-route-id="@product.Id">
+                                    <span class="text-black-50">Add to cart</span>
+                                </a>
                                 <span class="text-black-50">$@product.Price</span>
                             </div>
                         </div>
@@ -231,28 +233,8 @@
                 </div>
             </div>
             <div class="row pb-5">
-                @foreach(var blog in Model.Blogs)
-                {
-                     <div class="col-md-6 col-lg-4">
-                        <div class="item">
-                            <div class="img position-relative">
-                               <a asp-controller="blog" asp-action="detail" asp-route-id="@blog.Id" >
-                                    <img src="~/assets/img/@blog.ImageUrl" class="img-fluid" alt="">
-                               </a>
-                                <div class="date rounded bg-light position-absolute py-1 px-2">
-                                    <span>@blog.CreatedDate?.ToString("MM/dd/yyyy")</span>
-                                </div>
-                            </div>
-                            <div class="text mt-3 text-center px-5">
-                                <a  asp-controller="blog" asp-action="detail" asp-route-id="@blog.Id" >
-                                    <h5>@blog.Title</h5>
-                                </a>
-                                <p class="text-black-50">@blog.Desc</p>
-                            </div>
-                        </div>
-                    </div>
-                }
-            </div>
+               @await Component.InvokeAsync("Blog",3);
+           </div>
             </div>
         </section>
 

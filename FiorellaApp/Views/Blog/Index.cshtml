@@ -1,0 +1,12 @@
+﻿
+<section id="blog">
+    <div class="container">
+            <input type="hidden" value="@ViewBag.BlogCount" id="blogCount" />
+        <div class="row pb-5" id="blogList">
+            @await Component.InvokeAsync("Blog",3);
+        </div>
+        <div class="row justify-content-center">
+            <button id="loadMore" class="btn-primary btn">Load More...</button>
+        </div>
+    </div>
+</section>

@@ -1,4 +1,5 @@
-$(document).ready(function () {
+﻿$(document).ready(function () {
+
 
     // HEADER
 
@@ -148,3 +149,4 @@ $(document).ready(function () {
         );
       });
 })
+

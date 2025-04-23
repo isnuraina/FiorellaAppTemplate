@@ -26,9 +26,7 @@ namespace FiorellaApp.Controllers
                 Products=_fiorelloDbContext.Products
                 .Include(p=>p.Category)
                 .Include(p=>p.ProductImages)
-                .ToList(),
-                Blogs=_fiorelloDbContext.Blogs.ToList()
-                 
+                .ToList(),   
             };
             return View(homeVM);
         }

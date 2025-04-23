@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FiorellaApp.Models
 {
@@ -9,6 +10,7 @@ namespace FiorellaApp.Models
         public double Price { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
+        public int Count { get; set; }
         public List<ProductImage> ProductImages { get; set; }
     }
 }
