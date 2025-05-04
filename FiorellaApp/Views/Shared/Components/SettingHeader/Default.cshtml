@@ -116,6 +116,22 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <p>@ViewBag.FullName</p>
+                                    <a asp-action="logout" asp-controller="account">Logout</a>
+                                    if (User.IsInRole("admin"))
+                                    {
+                                        <a asp-area="admin" asp-action="index" asp-controller="dashboard">Logout</a>
+                                    }
+                                }
+                                else
+                                {
+                                    <a asp-action="login" asp-controller="account">Login</a>
+                                }
+
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="#">Elements</a>
                                 <ul class="list-unstyled py-3 elements">
                                     <li class=""><a class="px-1" href="">Element 1</a></li>
@@ -290,3 +306,4 @@
     </div>
 
 </header>
+

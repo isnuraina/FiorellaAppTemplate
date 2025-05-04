@@ -1,0 +1,24 @@
+﻿@model Slider
+<section id="about">
+    <div class="container py-5">
+        <div class="row py-5">
+            <div class="col-lg-6 text-center">
+                <h1>Slider Detail-> @Model.Id</h1>
+
+                <div class="img">
+                    <img src="~/assets/img/@Model.ImageUrl" class="img-fluid" alt="">
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-text mt-5 mt-lg-0 px-lg-5">
+     
+                    <div class="date rounded bg-light position-absolute py-1 px-2">
+                        <span>@Model.CreatedDate?.ToString("MM/dd/yyyy")</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <a asp-action="Index" class="btn btn-primary">Go Back</a>
+    </div>
+</section>
